@@ -9,6 +9,7 @@ class Info extends Component {
       <div>
         email: { this.props.email }
         <div>
+          <p>Use the Redux Dev Tools to look at the state.  It's pretty.</p>
           <button
             disabled={this.props.loading}
             onClick={this.props.loadInfo}>load info</button>
