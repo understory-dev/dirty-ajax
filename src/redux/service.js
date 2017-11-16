@@ -1,17 +1,10 @@
+import User from '../models/User'
+
 const simulateServerResponse = response => new Promise(resolve => {
   setTimeout(() => {
     resolve(response)
   }, 500)
 })
-
-const translateServerUserToUser = (serverUser) => {
-  // This works OK, but it's still not really obvious to the rest of the
-  // application what a `user` looks like to us.
-  return {
-    email: serverUser.email,
-  }
-}
-
 
 export const loadInfo = () =>
   simulateServerResponse(
@@ -37,6 +30,7 @@ export const loadInfo = () =>
         hasPendingInvite: false,
         eatsVegetables: true,
         foo: {},
+        favoriteNumber: 999,
       },
     }
   ).then(resp => {
@@ -45,4 +39,4 @@ export const loadInfo = () =>
     return resp.user
   })
   // The server has its idea of what a user is, but I don't need all that.
-  .then(translateServerUserToUser)
+  .then(user => new User(user))
