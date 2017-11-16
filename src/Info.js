@@ -8,6 +8,9 @@ class Info extends Component {
     return (
       <div>
         email: { this.props.email }
+        <p>
+          Everything looks the same to us, except now our state has a lot of junk we don't understand.
+        </p>
         <div>
           <button
             disabled={this.props.loading}
