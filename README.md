@@ -20,3 +20,9 @@ Find a method of managing data that:
 * is robust (handles server response changes well)
 * leaves the Redux state understandable
 * doesn't make you rip your hair out jumping through abstractions
+
+
+## Install/Run
+
+This is a CRA, so just `yarn` then `yarn start`.  It is ready to go with Redux
+DevTools and React Dev Tools.
